@@ -1,0 +1,519 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+/* header */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 2px 10%;
+  z-index: 100;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.menu_icone {
+  width: 30px;
+  cursor: pointer;
+}
+.Logo {
+  width: 100px;
+  margin-left: -10%;
+}
+button img {
+  width: 20px;
+  margin-left: 10px;
+}
+.Menu {
+  display: flex;
+  align-items: center;
+}
+.Menu ul {
+  display: flex;
+  list-style: none;
+  margin-left: 25px;
+}
+.Menu ul a {
+  margin-left: 10px;
+  text-transform: capitalize;
+  font-size: 13px;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+.Menu ul a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: rgb(249, 184, 7);
+  left: 0;
+  bottom: -5px;
+  transition: 0.1s ease-out;
+}
+.Menu ul a:hover::after {
+  width: 100%;
+}
+.header-end {
+  display: flex;
+  align-items: center;
+}
+.header-end i {
+  margin-right: 20px;
+}
+.fa-crown {
+  position: relative;
+  padding: 20px;
+}
+.header-end button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 0;
+  padding: 8px 15px;
+  background-color: #bb2337;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 50px;
+  z-index: 1;
+  transition: 0.2s ease-in-out;
+}
+.header-end button:hover {
+  transform: scale(1.06);
+}
+.header-end button span {
+  font-family: "Anton", sans-serif;
+  font-size: 15px;
+  width: 100px;
+  text-align: center;
+}
+.login {
+  position: absolute;
+  right: -22px;
+  top: 60px;
+  width: 170px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.login button {
+  width: 100%;
+  background-color: #f4a800;
+}
+hr {
+  border: none;
+  margin: 30px 0;
+  background-color: #999;
+  width: 100%;
+  height: 1px;
+}
+.login p {
+  font-size: 14px;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+.login button:last-child {
+  background-color: transparent;
+  color: #f4a800;
+  border: 1px solid #f4a800;
+}
+.login button::after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: -8px;
+  right: 40px;
+  z-index: -3;
+  background-color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(50deg);
+}
+.login button::before {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 25px;
+  top: -8px;
+  right: 40px;
+  background-color: white;
+  transform: rotate(50deg);
+}
+/* header */
+
+/* home */
+.home {
+  margin-top: 80px;
+  background: url("images_burger_king/images/img1.webp");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 200px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.home button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 0;
+  padding: 8px 15px;
+  background-color: #bb2337;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 50px;
+  z-index: 1;
+  transition: 0.2s ease-in-out;
+}
+.home button:hover {
+  transform: scale(1.06);
+}
+.home button span {
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  text-align: center;
+}
+/* home */
+
+/* foods */
+.foods {
+  margin: 50px 0;
+  padding: 0 10%;
+}
+h1 {
+  font-size: 40px;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Anton", sans-serif;
+}
+p {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+.foods-list {
+  display: flex;
+  justify-content: space-between;
+}
+.foods-list img {
+  box-shadow: 0 09px rgba(0, 0, 0, 0.1);
+  width: 350px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.foods-list .box {
+  transition: 0.25s;
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  padding: 20px;
+  height: 100%;
+}
+.foods-list .box:hover {
+  transform: scale(1.05);
+}
+
+/* foods */
+
+/* fidelity prog */
+.fidelity_prog {
+  margin: 35px 0;
+  height: 350px;
+  width: 100%;
+  background: url(images_burger_king/images/img8.png);
+  background-position: center;
+  background-size: cover;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+.fidelity_prog div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.fidelity_prog button {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 0;
+  padding: 8px 15px;
+  margin-top: 25px;
+  background-color: #f7a800;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 50px;
+  z-index: 1;
+  transition: 0.2s ease-in-out;
+}
+.fidelity_prog button:hover {
+  transform: scale(1.06);
+}
+.fidelity_prog button span {
+  font-family: "Anton", sans-serif;
+  font-size: 20px;
+  width: 150px;
+  text-align: center;
+}
+.fidelity_prog .div1 {
+  width: 300px;
+}
+.fidelity_prog .div2 {
+  width: 350px;
+  margin-top: 25px;
+}
+.fidelity_prog .div3 {
+  width: 410px;
+}
+.fidelity_prog img {
+  width: 100%;
+}
+/* little food */
+.little-food {
+  margin: 50px 0;
+  padding: 0 10%;
+}
+.little-food img {
+  width: 220px;
+}
+.little-food_box {
+  display: flex;
+  margin: 50px 0;
+  align-items: center;
+  justify-content: space-between;
+  height: 280px;
+}
+.little-food_box .box {
+  background-color: #fbf5ee;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  border-radius: 18px;
+  padding: 20px;
+  transition: 0.25s;
+  height: 100%;
+}
+.little-food_box .box:hover {
+  transform: scale(1.05);
+}
+/* footer  */
+footer {
+  background-color: #000;
+  color: #fff;
+  margin-top: 20px;
+  padding: 25px 10%;
+}
+footer p {
+  text-align: center;
+  font-size: 14px;
+}
+.icones_social {
+  margin: 20px 0;
+}
+.icones_social i {
+  margin-right: 20px;
+  font-size: 20px;
+}
+footer img {
+  margin-top: 20px;
+  border: 1px solid #fff;
+  height: 50px;
+  cursor: pointer;
+}
+footer img:last-child {
+  margin-left: 15px;
+}
+footer .div2 {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+footer .div2 ul {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+footer .div2 ul a {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: color 0.2s;
+  display: block;
+}
+footer .div2 ul a:hover {
+  transform: scale(1.05);
+}
+footer .div3 {
+  text-align: center;
+}
+footer .div2 .col {
+  display: flex;
+  flex-direction: column;
+  width: 22%;
+}
+footer .div2 .col ul {
+  padding-left: 0;
+}
+footer.div3 p:first-child {
+  font-size: 13px;
+}
+footer.div3 p:last-child {
+  font-size: 12px;
+  color: #484848;
+  margin-top: 10px;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+  header {
+    padding: 8px 5%;
+  }
+  .Menu ul {
+    display: none;
+  }
+  .Menu.open ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 5%;
+    right: 5%;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    gap: 10px;
+  }
+  .Logo {
+    width: 80px;
+    margin-left: 0;
+  }
+  .header-end {
+    gap: 10px;
+  }
+  .header-end button span {
+    width: auto;
+    font-size: 13px;
+  }
+  .home {
+    background-image: url("images_burger_king/images/head mobile.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 140px);
+  }
+  .foods {
+    padding: 0 5%;
+  }
+  .foods-list {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .foods-list img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+  .foods-list .box {
+    padding: 15px;
+  }
+  .fidelity_prog {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 5%;
+  }
+  .fidelity_prog .div1,
+  .fidelity_prog .div2,
+  .fidelity_prog .div3 {
+    width: 100%;
+    margin-top: 15px;
+  }
+  .little-food {
+    padding: 0 5%;
+  }
+  .little-food_box {
+    flex-direction: column;
+    gap: 15px;
+    height: auto;
+  }
+  .little-food img {
+    width: 100%;
+    height: auto;
+  }
+  footer {
+    padding: 20px 5%;
+  }
+  footer .div2 {
+    flex-direction: column;
+  }
+  footer .div2 .col {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .login {
+    position: static;
+    right: auto;
+    top: auto;
+    width: 100%;
+    padding: 10px;
+    display: none;
+  }
+  .menu_icone {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    background-image: url("images_burger_king/images/head mobile.jpg");
+    background-position: top center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  h1 {
+    font-size: 28px;
+  }
+  p {
+    font-size: 14px;
+  }
+  .home button span {
+    font-size: 16px;
+    width: auto;
+    padding: 8px 12px;
+  }
+  .Logo {
+    width: 70px;
+  }
+  .Menu ul a {
+    font-size: 12px;
+  }
+  .header-end i {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+}
