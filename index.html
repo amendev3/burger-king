@@ -6,6 +6,12 @@
     <title>Burger King</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <link
+      rel="icon"
+      type="image/png"
+      sizes="42x42"
+      href="images_burger_king/icone site.jpg"
+    />
   </head>
   <body>
     <!-- HEADER -->
@@ -24,10 +30,23 @@
         <i class="fa-solid fa-location-dot"></i>
         <i class="fa-solid fa-crown"></i>
         <div class="login">
-          <button><span>se connecter</span></button>
-          <hr>
-          <p> vous n'avez pas encore de compte ?</p>
-          <button><span>rejoindre le kingdom</span></button>
+          <button class="login-btn"><span>Se connecter</span></button>
+          <div class="login-panel" aria-hidden="true">
+            <form class="login-form" novalidate>
+              <h4>Connexion</h4>
+              <label>
+                Email
+                <input type="email" name="email" required placeholder="vous@exemple.com" autocomplete="email" />
+              </label>
+              <label>
+                Mot de passe
+                <input type="password" name="password" required placeholder="Mot de passe" autocomplete="current-password" />
+              </label>
+              <div class="error" role="alert" aria-live="assertive"></div>
+              <button type="submit" class="submit">Se connecter</button>
+              <p class="small">Pas encore de compte ? <a href="#">Rejoindre le Kingdom</a></p>
+            </form>
+          </div>
         </div>
         <button>
           <span>click & collect</span>
@@ -39,11 +58,11 @@
     <!-- HEADER -->
      <!-- home -->
       <section class="home">
-        <button><span>découvrez-le!</span></button>
+        <button id="discoverBtn"><span>découvrez-le!</span></button>
       </section>
      <!-- home -->
       <!-- foods -->
-       <section class="foods">
+       <section class="foods reveal">
         <h1>Chaud Bouillant</h1>
         <p>découvrez les actualités burger-king</p>
   <div class="foods-list">
@@ -63,7 +82,7 @@
        </section>
       <!-- foods -->
        <!-- fidelity prog -->
-        <section class="fidelity_prog">
+        <section class="fidelity_prog reveal">
           <div class="div1">
             <img src="images_burger_king/images/img5.png" alt="Fidelity program image">
             <button><span>Rejoindre</span></button>
@@ -79,7 +98,7 @@
        <!-- fidelity prog -->
 
         <!-- little food -->
-        <section class="little-food">
+        <section class="little-food reveal">
           <h1>Une petite ou grosse faim ?🍔</h1>
           <div class="little-food_box">
             <div class="box">
@@ -160,7 +179,11 @@
           </div>
          </footer>
         <!-- footer -->
-         
+
+<!-- fin code Html -->
+
+         <!-- javaScript code -->
+
   <script>
     (function(){
       const menuIcon = document.querySelector('.menu_icone');
@@ -182,6 +205,75 @@
 
       // Close menu when a link inside is clicked (useful for single-page navigation)
       menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+    })();
+
+    (function(){
+      const loginIcon = document.querySelector('.fa-crown');
+      const loginBtn = document.querySelector('.login-btn');
+      const loginPanel = document.querySelector('.login-panel');
+      if (!loginIcon || !loginBtn || !loginPanel) return;
+
+      function toggleLogin(e){
+        e && e.stopPropagation();
+        const visible = loginPanel.classList.toggle('active');
+        loginPanel.setAttribute('aria-hidden', visible ? 'false' : 'true');
+      }
+
+      loginIcon.addEventListener('click', toggleLogin);
+      loginBtn.addEventListener('click', toggleLogin);
+
+      document.addEventListener('click', (e) => {
+        if (!loginPanel.contains(e.target) && !loginIcon.contains(e.target) && !loginBtn.contains(e.target)) {
+          loginPanel.classList.remove('active');
+          loginPanel.setAttribute('aria-hidden','true');
+        }
+      });
+
+      const form = document.querySelector('.login-form');
+      if (form) {
+        const email = form.querySelector('input[name="email"]');
+        const password = form.querySelector('input[name="password"]');
+        const error = form.querySelector('.error');
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          error.style.display = 'none';
+          if (!email.value || !password.value) {
+            error.textContent = 'Veuillez renseigner email et mot de passe';
+            error.style.display = 'block';
+            return;
+          }
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email.value)) {
+            error.textContent = 'Adresse email invalide';
+            error.style.display = 'block';
+            return;
+          }
+          // Simuler une soumission
+          loginPanel.classList.remove('active');
+          alert('Connexion réussie (démo)');
+          form.reset();
+        });
+      }
+
+      const discoverBtn = document.getElementById('discoverBtn');
+      const foodsSection = document.querySelector('.foods');
+      if (discoverBtn && foodsSection) {
+        discoverBtn.addEventListener('click', () => {
+          foodsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+
+      const reveals = document.querySelectorAll('.reveal');
+      window.addEventListener('scroll', () => {
+        reveals.forEach(section => {
+          const sectionTop = section.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
+
+          if (sectionTop < windowHeight - 100) {
+            section.classList.add('active');
+          }
+        });
+      });
     })();
   </script>
 
